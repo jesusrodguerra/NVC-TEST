@@ -1,0 +1,23 @@
+<div class="mt-4 container">
+    <button mat-stroked-button routerLink="/movie">Back</button>
+    <div class="detail-container">
+        <div *ngIf="movieID">
+            <mat-card class="example-card">
+                <img  [src]="movieID.poster_path === null ? image+movieID.backdrop_path : image+movieID.poster_path" alt="movieID.name">
+                <mat-card-content>
+                    <mat-card-title> {{ movieID.name }} </mat-card-title>
+                </mat-card-content>
+            </mat-card>      
+        </div>
+        <div *ngIf="movieID?.seasons" class="movie-detail-content">
+            <h1>Seasons</h1>
+            <hr>
+            <div *ngFor="let season of movieID.seasons">
+                <div class="seasons-container">
+                    <h2> {{ season.name }} </h2>
+                    <p> {{ season.overview === "" ? "Sorry we don't have the description" : season.overview}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

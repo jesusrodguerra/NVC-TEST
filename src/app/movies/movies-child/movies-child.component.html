@@ -1,0 +1,12 @@
+<div class="card">
+    <a [routerLink]="['/movie', movies.id ]"> 
+        <div class="card-image">
+            <img *ngIf="movies.poster_path" [src]="movies.poster_path === null ? image+movies.backdrop_path : image+movies.poster_path" alt="movies.name"/> 
+        </div>                
+        <div class="content">
+            <h2 class="title is-4"> {{movies.name === null ? movies.title : movies.name}} </h2>
+            <p> Rating: {{movies.vote_average}} </p>
+            <p> On Air: {{ movies.first_air_date }} </p>
+        </div>
+    </a>
+</div>

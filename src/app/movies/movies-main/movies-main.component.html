@@ -1,0 +1,19 @@
+<div class="heading-container">
+  <h1 class="heading">TV SHOWS</h1>
+</div>
+<form class="containerBar" (submit)="getData()">
+  <input type="text" [(ngModel)]="searchWord" name="searchWord" placeholder="Search Series">
+  <i class="fa fa-search"></i>
+  <!-- <button (click)="getData()" class="search">Buscar</button> -->
+</form>
+
+<div *ngIf="movies" class="card-container"
+infinite-scroll
+[infiniteScrollDistance]="1"
+(scrolled)="onScrollDown()"
+[scrollWindow]="false"
+>
+    <div *ngFor="let movie of movies">
+        <app-movies-child [movies]="movie"></app-movies-child>
+    </div>
+</div>
