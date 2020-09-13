@@ -39,6 +39,9 @@ export class MoviesMainComponent implements OnInit {
         this.movies = [...this.movies, ...movies.results];
       }
       console.log(movies.results);
+    }, (error) => {
+      console.log(error);
+      alert("Error Can't Find the information");
     });
   }
 
@@ -50,6 +53,9 @@ export class MoviesMainComponent implements OnInit {
         this.movies = [...this.movies, ...topRated.results];
       }
       console.log(topRated);
+    }, (error) => {
+      console.log(error);
+      alert("Error Can't Find the information");
     });
   }
 
