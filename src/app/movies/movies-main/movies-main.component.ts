@@ -41,7 +41,7 @@ export class MoviesMainComponent implements OnInit {
       console.log(movies.results);
     }, (error) => {
       console.log(error);
-      alert("Error Can't Find the information");
+      alert("Can't Find the information, try again later");
     });
   }
 
@@ -55,7 +55,7 @@ export class MoviesMainComponent implements OnInit {
       console.log(topRated);
     }, (error) => {
       console.log(error);
-      alert("Error Can't Find the information");
+      alert("Can't Find the information, try again later");
     });
   }
 

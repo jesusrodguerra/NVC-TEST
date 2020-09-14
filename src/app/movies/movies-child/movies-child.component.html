@@ -1,7 +1,7 @@
 <div class="card">
     <a [routerLink]="['/movie', movies.id ]"> 
         <div class="card-image">
-            <img *ngIf="movies.poster_path" [src]="movies.poster_path === null ? image+movies.backdrop_path : image+movies.poster_path" alt="movies.name"/> 
+            <img [src]='image+movies.poster_path' onerror="this.src='assets/no-image-available.png'" alt="movies.name"/> 
         </div>                
         <div class="content">
             <h2 class="title is-4"> {{movies.name === null ? movies.title : movies.name}} </h2>
